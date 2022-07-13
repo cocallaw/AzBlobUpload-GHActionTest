@@ -7,5 +7,5 @@ function FindProxyForURL(url, host) {
 
 // DEFAULT RULE: All other traffic, go DIRECT.
 	return "DIRECT";
-
+//ADDING TEXT FOR TESTING FILE
 }
