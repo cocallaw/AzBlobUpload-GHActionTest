@@ -1,0 +1,17 @@
+name: Upload PAC FIle To Azure Blob Storage Option 2
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps: 
+    - uses: actions/checkout@v1
+    - uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '3.1.100'
+    - uses: lauchacarro/Azure-Storage-Action@master
+      with:
+        folder: 'PAC' # All files and subfolders found in the specified folder will be uploaded.
+        connection-string: ${{ secrets.ConnectionString }}
+        public-access-policy: Blob # BlobContainer | Blob | None
+        blob-container-name: 'ghtest'
